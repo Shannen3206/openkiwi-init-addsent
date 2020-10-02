@@ -1,0 +1,27 @@
+#MAIN OPTIONS (running args)
+
+experiment-name: predict-predest
+
+output-dir: /home/snchen/project/openkiwi-init-addsent/runs/predesti2
+
+#
+# GENERAL OPTIONS
+#
+# random
+seed: 42
+
+# gpu
+gpu-id: -1
+
+model: estimator
+
+# save and load
+load-model: /home/snchen/project/openkiwi-init-addsent/runs/predesti2/best_model.torch
+
+#
+# DATA OPTIONS
+#
+wmt18-format: False
+test-source: /home/snchen/data/wmt2017/word_level/en_de/test/test.src
+test-target: /home/snchen/data/wmt2017/word_level/en_de/test/test.mt
+valid-batch-size: 64

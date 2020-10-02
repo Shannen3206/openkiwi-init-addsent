@@ -1,0 +1,16 @@
+model: quetch
+test-source: F:/openkiwi/wmt2016/word_level/en_de/test/test.src
+test-target: F:/openkiwi/wmt2016/word_level/en_de/test/test.mt
+test-alignments: F:/openkiwi/wmt2016/word_level/en_de/test/test.alignments
+
+wmt18-format: false
+
+source-max-length: 50
+source-min-length: 1
+target-max-length: 50
+target-min-length: 1
+
+output-dir: F:/openkiwi/runs/preditions-quetch
+seed: 42
+gpu-id: -1
+load-model: F:/openkiwi/runs/quetch/best_model.torch

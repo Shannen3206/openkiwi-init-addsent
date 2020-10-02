@@ -1,0 +1,47 @@
+model: linear
+
+train-source: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.src
+train-target: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.mt
+train-alignments: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.alignments
+# train-source-tags: F:/openkiwi/WMT19/wordsent_level/mini/train.source_tags
+train-target-tags: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.tags
+
+# train-source-pos: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.source_pos
+# train-target-pos: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.pos
+
+# train-target-parse:
+# train-target-ngram:
+# train-target-stacked:
+
+valid-source: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.src
+valid-target: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.mt
+valid-alignments: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.alignments
+#valid-source-tags: F:/openkiwi/WMT19/wordsent_level/mini/dev.source_tags
+valid-target-tags: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.tags
+
+# valid-source-pos: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.source_pos
+# valid-target-pos: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.pos
+
+# valid-target-parse:
+# valid-target-ngram:
+# valid-target-stacked:
+
+source-vocab-size: 45000
+target-vocab-size: 45000
+source-vocab-min-frequency: 1
+target-vocab-min-frequency: 1
+
+use-basic-features-only: 0
+use-bigrams: 1
+use-simple-bigram-features: 0
+training-algorithm: svm_mira
+regularization-constant: 0.001
+cost-false-positives: 0.2
+cost-false-negatives: 0.8
+evaluation-metric: f1_mult
+
+epoch: 1
+
+train-batch-size: 4
+valid-batch-size: 4
+output-dir: F:/openkiwi/runs/linear

@@ -1,0 +1,4 @@
+format: wmt17
+pred-format: wmt17
+gold-target: F:/openkiwi/wmt2016/word_level/en_de/test/mini/test_words.tags
+pred-target: F:/openkiwi/runs/preditions-linear/tags

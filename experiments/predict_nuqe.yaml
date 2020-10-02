@@ -1,0 +1,19 @@
+model: nuqe
+seed: 42
+gpu-id: -1
+
+#MAIN OPTIONS (running args)
+experiment-name: predict-nuqe
+
+#
+# DATA OPTIONS
+#
+wmt18-format: false
+valid-batch-size: 64
+test-source: /home/snchen/data/wmt2017/word_level/en_de/test/test.src
+test-target: /home/snchen/data/wmt2017/word_level/en_de/test/test.mt
+test-alignments: /home/snchen/data/wmt2017/word_level/en_de/test/test.align
+
+load-vocab: /home/snchen/project/openkiwi-init-addsent/runs/nuqe/vocab.torch
+load-model: /home/snchen/project/openkiwi-init-addsent/runs/nuqe/best_model.torch
+output-dir: /home/snchen/project/openkiwi-init-addsent/runs/nuqe

@@ -1,0 +1,15 @@
+model: linear
+
+test-source: F:/openkiwi/wmt2016/word_level/en_de/test/mini/test.src
+test-target: F:/openkiwi/wmt2016/word_level/en_de/test/mini/test.mt
+test-alignments: F:/openkiwi/wmt2016/word_level/en_de/test/mini/test.alignments
+# test-source-pos:
+# test-target-pos:
+# test-target-parse:
+# test-target-ngram:
+# test-target-stacked:
+
+evaluation-metric: f1_mult
+
+output-dir: F:/openkiwi/runs/preditions-linear
+load-model: F:/openkiwi/runs/linear/best_model.torch

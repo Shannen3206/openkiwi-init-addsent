@@ -1,0 +1,66 @@
+model: quetch
+
+# data
+train-source: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.src
+train-target: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.mt
+train-alignments: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.alignments
+# train-source-tags: F:/openkiwi/WMT19/wordsent_level/small/train.source_tags
+train-target-tags: F:/openkiwi/wmt2016/word_level/en_de/train/mini/train.tags
+
+valid-source: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.src
+valid-target: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.mt
+valid-alignments: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.alignments
+# valid-source-tags: F:/openkiwi/WMT19/wordsent_level/small/dev.source_tags
+valid-target-tags: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.tags
+
+valid-source-pos: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.source_pos
+valid-target-pos: F:/openkiwi/wmt2016/word_level/en_de/dev/mini/dev.pos
+
+# data processing options
+predict-target: True
+predict-gaps: false
+predict-source: false
+
+wmt18-format: false
+source-max-length: 50
+source-min-length: 1
+target-max-length: 50
+target-min-length: 1
+
+# vocabulary options
+source-vocab-size: 45000
+target-vocab-size: 45000
+source-vocab-min-frequency: 1
+target-vocab-min-frequency: 1
+keep-rare-words-with-embeddings: False
+add-embeddings-vocab: False
+embeddings-format: polyglot
+embeddings-binary: False
+# source-embeddings:
+# target-embeddings:
+
+# hyper-parameters
+bad-weight: 3.0
+window-size: 3
+max-aligned: 5
+source-embeddings-size: 50
+target-embeddings-size: 50
+freeze-embeddings: False
+embeddings-dropout: 0.0
+hidden-sizes: 50
+dropout: 0.0
+init-type: uniform
+init-support: 0.1
+
+epochs: 1
+output-dir: F:/openkiwi/runs/quetch
+train-batch-size: 4
+valid-batch-size: 4
+
+
+checkpoint-validation-steps: 5000
+checkpoint-save: true
+checkpoint-keep-only-best: 1
+checkpoint-early-stop-patience: 0
+
+gpu-id: 1

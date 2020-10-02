@@ -1,0 +1,109 @@
+model: nuqe
+experiment-name: NuQE WMT17 en_de.nmt
+
+#
+# WMT2018-NUQE OPTION
+#
+# what to predict
+predict-target: true
+predict-gaps: false
+predict-source: false
+
+# format of files(WMT18+ has added GAP tags)
+wmt18-format: false
+
+#
+# GENERAL OPTIONS
+#
+# random
+seed: 42
+
+# logging
+# debug: false
+# output-dir: null  # mlflow will create one if this is null
+mlflow-tracking-uri: mlruns/
+
+# save and load
+resume: false
+
+#
+# DATA OPTIONS
+#
+# corpus
+train-source: /home/snchen/data/wmt2017/word_level/en_de/train/train.src
+# train-source-tags: data/WMT18/word_level/en_de.nmt/train.src_tags
+train-target: /home/snchen/data/wmt2017/word_level/en_de/train/train.mt
+train-target-tags: /home/snchen/data/wmt2017/word_level/en_de/train/train.tags
+train-alignments: /home/snchen/data/wmt2017/word_level/en_de/train/train.align
+
+valid-source: /home/snchen/data/wmt2017/word_level/en_de/dev/dev.src
+# valid-source-tags: data/WMT18/word_level/en_de.nmt/dev.src_tags
+valid-target: /home/snchen/data/wmt2017/word_level/en_de/dev/dev.mt
+valid-target-tags: /home/snchen/data/wmt2017/word_level/en_de/dev/dev.tags
+valid-alignments: /home/snchen/data/wmt2017/word_level/en_de/dev/dev.align
+
+# vocabulary
+source-vocab-min-frequency: 1
+source-vocab-size: 45000
+target-vocab-min-frequency: 1
+target-vocab-size: 45000
+keep-rare-words-with-embeddings: true
+add-embeddings-vocab: false
+
+# embeddings
+# pip-install the polyglot package to use these
+#embeddings-format: polyglot
+#source-embeddings: /home/snchen/project/openkiwi-init-addsent/data_embeddings/exp1/en_word_embed.tar.bz2
+#target-embeddings: /home/snchen/project/openkiwi-init-addsent/data_embeddings/exp1/de_word_embed.tar.bz2
+#source-embeddings: /home/snchen/project/openkiwi-init-addsent/data_polyglot/embeddings2/en/embeddings_pkl.tar.bz2
+#target-embeddings: /home/snchen/project/openkiwi-init-addsent/data_polyglot/embeddings2/de/embeddings_pkl.tar.bz2
+
+# load and save data (preprocessed datasets and built vocabs)
+save-data: /home/snchen/project/openkiwi-init-addsent/runs/nuqe
+#load-data: null
+
+#
+# MODEL OPTIONS
+#
+# embeddings
+source-embeddings-size: 200
+target-embeddings-size: 200
+
+# network
+hidden-sizes: [400,200,100,50]
+# output-size: 50
+dropout: 0.0
+embeddings-dropout: 0.5
+freeze-embeddings: false
+bad-weight: 3.0
+
+#
+# TRAINING OPTIONS
+#
+# How and when Ato save the model
+checkpoint-validation-steps: 5000
+checkpoint-save: true
+checkpoint-keep-only-best: 1
+checkpoint-early-stop-patience: 0
+
+#
+# TRAINING OPTIMIZATION
+#
+optimizer: adam
+learning-rate: 0.001
+
+#
+# QUETCH OPTIONS
+#
+window-size: 3
+max-aligned: 5
+
+#load-vocab: /home/snchen/project/openkiwi-init-addsent/data/vocabulary.torch
+
+# shuffle: true
+epochs: 20
+train-batch-size: 64
+valid-batch-size: 64
+
+output-dir: /home/snchen/project/openkiwi-init-addsent/runs/nuqe
+gpu-id: 2
